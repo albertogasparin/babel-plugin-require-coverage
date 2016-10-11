@@ -1,18 +1,25 @@
 {
-  "presets": [
-    "es2015"
-  ],
-  "sourceMaps": "inline",
-  "env": {
-    "lines": {
-      "retainLines": true,
-    },
-    "plugin": {
-      "plugins": ["babel-plugin-rewire"]
-    },
-    "linesplugin": {
-      "retainLines": true,
-      "plugins": ["babel-plugin-rewire"]
-    },
-  }
+	"presets": [
+		"es2015"
+	],
+	"sourceMaps": "inline",
+	"env": {
+		"lines": {
+			"retainLines": true,
+		},
+		"plugin": {
+			"plugins": {
+				"babel-plugin-istanbul": {
+					"include": [ "index.js" ],
+					"exclude": [ "test.js" ]
+				}, 
+				"babel-plugin-rewire": {
+				} 
+			}
+		},
+		"linesplugin": {
+			"retainLines": true,
+			"plugins": ["babel-plugin-rewire"]
+		},
+	}
 }
